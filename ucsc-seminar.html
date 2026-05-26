@@ -140,9 +140,9 @@
         /* ========== SCENE 0: BOOT ========== */
         .boot-screen { background: var(--dark); }
         .boot-text {
-            font-family: 'Courier New', monospace; font-size: 14px;
+            font-family: 'Courier New', monospace; font-size: clamp(16px, 2.5vw, 24px);
             color: var(--red-bright); text-shadow: 0 0 5px var(--red-glow);
-            line-height: 1.9; max-width: 700px; width: 90%;
+            line-height: 2.2; max-width: 800px; width: 90%;
         }
         .boot-text .line { opacity: 0; white-space: nowrap; overflow: hidden; }
         .boot-text .line.typed { animation: typeLine 0.35s steps(40, end) forwards; }
@@ -747,8 +747,8 @@
                     <span class="letter-red">U</span><span class="letter-red">C</span><span class="letter-red">S</span><span class="letter-red">C</span>
                 </div>
                 <div class="ucsc-divider" id="ucsc-divider"></div>
-                <div class="ucsc-name" id="ucsc-name">Universidad Catolica de la Santisima Concepcion</div>
-                <div class="ucsc-campus" id="ucsc-campus">Sede Chillan</div>
+                <div class="ucsc-name" id="ucsc-name">Universidad Católica de la Santísima Concepción</div>
+                <div class="ucsc-campus" id="ucsc-campus">Sede Chillán</div>
             </div>
         </div>
 
@@ -761,12 +761,12 @@
                 <span style="color:var(--red-bright); text-shadow: 0 0 20px var(--red-glow);"> REALIDAD VIRTUAL XR</span>
             </div>
             <div class="seminar-year" id="sem-year">2026</div>
-            <div class="seminar-sub" id="sem-sub">El futuro se construye hoy</div>
+            <div class="seminar-sub" id="sem-sub">Ingeniería de ejecución en informática</div>
         </div>
 
         <!-- SCENE 3: PROJECT CARDS -->
         <div class="scene projects-scene" id="scene-projects">
-            <div class="scene-title" id="proj-title">Proyectos de <span>Presentacion</span></div>
+            <div class="scene-title" id="proj-title">Proyectos de <span>Presentación</span></div>
             <div class="cards-row">
                 <div class="project-card" id="pc1">
                     <div class="card-icon-area">
@@ -776,7 +776,7 @@
                     <div class="card-body">
                         <h3>Proyecto Alpha</h3>
                         <h4>IoT para Agricultura Inteligente</h4>
-                        <p>Sistema de sensores y analisis predictivo para optimizar recursos hidricos en la region del Nuble.</p>
+                        <p>Sistema de sensores y análisis predictivo para optimizar recursos hídricos en la región del Ñuble.</p>
                         <div class="card-techs">
                             <span>Arduino</span><span>Python</span><span>MQTT</span><span>AWS</span>
                         </div>
@@ -790,7 +790,7 @@
                     <div class="card-body">
                         <h3>Proyecto Beta</h3>
                         <h4>Asistente Virtual para Salud</h4>
-                        <p>Chatbot con procesamiento de lenguaje natural para triage medico y orientacion al paciente.</p>
+                        <p>Chatbot con procesamiento de lenguaje natural para triaje médico y orientación al paciente.</p>
                         <div class="card-techs">
                             <span>NLP</span><span>TensorFlow</span><span>React</span><span>Node.js</span>
                         </div>
@@ -804,7 +804,7 @@
                     <div class="card-body">
                         <h3>Proyecto Gamma</h3>
                         <h4>Plataforma Educativa Blockchain</h4>
-                        <p>Sistema de certificacion academica descentralizado para validar titulos y competencias digitales.</p>
+                        <p>Sistema de certificación académica descentralizado para validar títulos y competencias digitales.</p>
                         <div class="card-techs">
                             <span>Solidity</span><span>Ethereum</span><span>Web3</span><span>IPFS</span>
                         </div>
@@ -828,17 +828,16 @@
                     <div class="photo-scan"></div>
                 </div>
                 <div class="organizer-info" id="org-info">
-                    <div class="org-label">JEFA DE CARRERA</div>
-                    <div class="org-name">Lucia Fuentes</div>
-                    <div class="org-title">Jefa de Carrera de Informatica - UCSC Sede Chillan</div>
+                    <div class="org-name">Lucía Fuentes</div>
+                    <div class="org-title">Jefa de Carrera de Informática - UCSC Sede Chillán</div>
                     <div class="org-desc">
-                        Doctora en Ciencias de la Computacion con mas de 15 anos de experiencia en docencia e investigacion. 
-                        Lider de proyectos de innovacion tecnologica y promotora del ecosistema emprendedor digital en la region del Nuble.
+                        Doctora en Ciencias de la Computación con más de 15 años de experiencia en docencia e investigación. 
+                        Líder de proyectos de innovación tecnológica y promotora del ecosistema emprendedor digital en la región del Ñuble.
                     </div>
                     <div class="org-stats">
                         <div class="org-stat">
                             <div class="org-stat-num">15+</div>
-                            <div class="org-stat-label">Anos Docencia</div>
+                            <div class="org-stat-label">Años Docencia</div>
                         </div>
                         <div class="org-stat">
                             <div class="org-stat-num">20+</div>
@@ -860,7 +859,7 @@
                         </div>
                         <div class="org-contact-item">
 <svg class="icon" width="1em" height="1em"><use href="#ic-map-marker-alt"/></svg>
-                            <span>Avda. O'Higgins esquina Vegas de Saldías, Chillan</span>
+                            <span>Arauco 449, Chillán</span>
                         </div>
                     </div>
                 </div>
@@ -874,24 +873,24 @@
                 <div class="schedule-item" id="si1">
                     <div class="sched-time">09:00</div>
                     <div class="sched-content">
-                        <h4>Acreditacion y Bienvenida</h4>
-                        <p>Recepcion de participantes y palabras de apertura de la Directora de Carrera.</p>
-                        <span class="sched-tag">Inauguracion</span>
+                        <h4>Acreditación y Bienvenida</h4>
+                        <p>Recepción de participantes y palabras de apertura de la Directora de Carrera.</p>
+                        <span class="sched-tag">Inauguración</span>
                     </div>
                 </div>
                 <div class="schedule-item" id="si2">
                     <div class="sched-time">09:30</div>
                     <div class="sched-content">
                         <h4>Keynote: El Futuro de la IA en Chile</h4>
-                        <p>Panorama de la inteligencia artificial y oportunidades para la region del Nuble.</p>
+                        <p>Panorama de la inteligencia artificial y oportunidades para la región del Ñuble.</p>
                         <span class="sched-tag">Keynote</span>
                     </div>
                 </div>
                 <div class="schedule-item" id="si3">
                     <div class="sched-time">10:30</div>
                     <div class="sched-content">
-                        <h4>Proyecto Alpha: IoT Agricola</h4>
-                        <p>Presentacion del sistema de sensores para agricultura inteligente.</p>
+                        <h4>Proyecto Alpha: IoT Agrícola</h4>
+                        <p>Presentación del sistema de sensores para agricultura inteligente.</p>
                         <span class="sched-tag">Proyecto</span>
                     </div>
                 </div>
@@ -907,7 +906,7 @@
                     <div class="sched-time">12:00</div>
                     <div class="sched-content">
                         <h4>Proyecto Beta: Chatbot de Salud</h4>
-                        <p>Demo en vivo del asistente virtual para triage medico.</p>
+                        <p>Demo en vivo del asistente virtual para triaje médico.</p>
                         <span class="sched-tag">Live Demo</span>
                     </div>
                 </div>
@@ -915,7 +914,7 @@
                     <div class="sched-time">13:00</div>
                     <div class="sched-content">
                         <h4>Proyecto Gamma: Blockchain Educativo</h4>
-                        <p>Certificacion academica descentralizada al servicio de la educacion.</p>
+                        <p>Certificación académica descentralizada al servicio de la educación.</p>
                         <span class="sched-tag">Proyecto</span>
                     </div>
                 </div>
@@ -928,7 +927,7 @@
                 <div class="eventinfo-box">
                     <svg class="icon" width="1em" height="1em"><use href="#ic-calendar-alt"/></svg>
                     <h4>Fecha</h4>
-                    <p><span class="highlight">04 de Mayo, 2026</span><br>Jueves</p>
+                    <p><span class="highlight">04 de mayo de 2026</span><br>jueves</p>
                 </div>
                 <div class="eventinfo-box">
                     <svg class="icon" width="1em" height="1em"><use href="#ic-clock"/></svg>
@@ -970,28 +969,18 @@
             </div>
         </div>
 
-        <!-- SCENE 8: CTA -->
-        <div class="scene cta-scene" id="scene-cta">
-            <div class="cta-content">
-                <div class="cta-label" id="cta-label">NO TE LO PIERDAS</div>
-                <div class="cta-title" id="cta-title">INSCRIBETE <span style="color:var(--red-bright); text-shadow:0 0 20px var(--red-glow);">AHORA</span></div>
-                <div class="cta-desc" id="cta-desc">Cupos limitados. Reserva tu lugar en el seminario de Informatica mas importante de la region.</div>
-                <a href="#" class="cta-btn" id="cta-btn"><svg class="icon" width="1em" height="1em"><use href="#ic-rocket"/></svg> REGISTRARSE</a>
-            </div>
-        </div>
-
-        <!-- SCENE 9: ENDING -->
+        <!-- SCENE 8: ENDING -->
         <div class="scene end-scene" id="scene-end">
             <div class="end-ucsc" id="end-ucsc">
                 <span style="color:var(--red-bright); text-shadow:0 0 30px var(--red-glow), 0 0 60px var(--red-glow)">UCSC</span>
             </div>
             <div class="end-line" id="end-line"></div>
-            <div class="end-name" id="end-name">Universidad Catolica de la Santisima Concepcion</div>
-            <div class="end-campus" id="end-campus">Sede Chillan - Departamento de Informatica</div>
+            <div class="end-name" id="end-name">Universidad Católica de la Santísima Concepción</div>
+            <div class="end-campus" id="end-campus">Sede Chillán - Escuela de Tecnología e Industrias</div>
             <div class="end-contact" id="end-contact">
-                lfuentes@ucsc.cl &nbsp;&bull;&nbsp; +56 41 234 5707 &nbsp;&bull;&nbsp; Avda. O'Higgins esquina Vegas de Saldías, Chillan
+                lfuentes@ucsc.cl &nbsp;&bull;&nbsp; +56 41 234 5707 &nbsp;&bull;&nbsp; Arauco 449, Chillán
             </div>
-            <div class="end-hashtag" id="end-hashtag">#SeminarioInformaticaUCSC</div>
+            <div class="end-hashtag" id="end-hashtag">#SeminarioInformáticaUCSC</div>
         </div>
     </div>
 
@@ -1079,9 +1068,9 @@
         const scenes = [
             'scene-boot', 'scene-ucsc', 'scene-seminar', 'scene-projects',
             'scene-organizer', 'scene-schedule', 'scene-eventinfo',
-            'scene-speakers', 'scene-cta', 'scene-end'
+            'scene-speakers', 'scene-end'
         ];
-        const durations = [6500, 5000, 5000, 6000, 7000, 7000, 5000, 5000, 5000, 5500];
+        const durations = [8000, 7000, 7000, 9000, 9000, 12000, 7000, 7000, 12000];
         const totalDuration = durations.reduce((a, b) => a + b, 0);
 
         let currentScene = -1;
@@ -1118,8 +1107,7 @@
                 case 5: schedAnim(); break;
                 case 6: einfoAnim(); break;
                 case 7: spkAnim(); break;
-                case 8: ctaAnim(); break;
-                case 9: endAnim(); break;
+                case 8: endAnim(); break;
             }
         }
 
@@ -1129,15 +1117,15 @@
             c.innerHTML = '';
             const lines = [
                 { t: '> SISTEMA UCSC v2026.1', c: 'system' },
-                { t: '> Inicializando modulo academico...', c: 'system' },
+                { t: '> Inicializando módulo académico...', c: 'system' },
                 { t: '> Cargando datos de seminario...... OK', c: 'success' },
                 { t: '> Conectando red universitaria...... OK', c: 'success' },
                 { t: '> Verificando certificaciones...... OK', c: 'success' },
                 { t: '> Compilando agenda de eventos..... OK', c: 'success' },
                 { t: '> Activando protocolo FTI.......... OK', c: 'success' },
-                { t: '> Sincronizando sede Chillan........ OK', c: 'success' },
+                { t: '> Sincronizando sede Chillán........ OK', c: 'success' },
                 { t: '', c: 'system' },
-                { t: '> BIENVENIDO AL SEMINARIO DE INFORMATICA UCSC', c: 'gold' },
+                { t: '> BIENVENIDO AL SEMINARIO DE INFORMÁTICA UCSC', c: 'gold' },
             ];
             let delay = 0;
             lines.forEach(l => {
@@ -1217,14 +1205,6 @@
             });
         }
 
-        // ---- CTA ----
-        function ctaAnim() {
-            setTimeout(() => document.getElementById('cta-label').classList.add('reveal'), 300);
-            setTimeout(() => document.getElementById('cta-title').classList.add('reveal'), 600);
-            setTimeout(() => document.getElementById('cta-desc').classList.add('reveal'), 1100);
-            setTimeout(() => document.getElementById('cta-btn').classList.add('reveal'), 1600);
-        }
-
         // ---- END ----
         function endAnim() {
             setTimeout(() => document.getElementById('end-ucsc').classList.add('reveal'), 300);
@@ -1280,7 +1260,6 @@
             const ids = ['ucsc-acronym','ucsc-divider','ucsc-name','ucsc-campus',
                 'sem-badge','sem-title','sem-year','sem-sub',
                 'proj-title','org-photo','org-info','sched-title','spk-title',
-                'cta-label','cta-title','cta-desc','cta-btn',
                 'end-ucsc','end-line','end-name','end-campus','end-contact','end-hashtag'];
             ids.forEach(id => {
                 const el = document.getElementById(id);
