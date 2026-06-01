@@ -503,41 +503,7 @@
             margin-top: 5px;
         }
 
-        /* ========== SCENE 6: EVENT INFO ========== */
-        .eventinfo-scene { background: transparent; text-align: center; }
-        .eventinfo-grid {
-            display: flex; gap: 40px; flex-wrap: wrap;
-            justify-content: center; max-width: 900px; width: 92%;
-        }
-        .eventinfo-box {
-            width: 250px; padding: 35px 25px;
-            border: 1px solid rgba(204,0,0,0.2);
-            background: rgba(10,10,10,0.9);
-            opacity: 0; transform: translateY(40px) scale(0.9);
-            transition: all 0.3s; text-align: center;
-        }
-        .eventinfo-box.animate { animation: fadeSlideUp 0.7s ease-out forwards; }
-        .eventinfo-box:hover {
-            border-color: var(--red-bright);
-            box-shadow: 0 0 25px var(--red-glow);
-            transform: translateY(-5px);
-        }
-        .eventinfo-box .icon {
-            font-size: 36px; color: var(--white);
-            text-shadow: 0 0 15px var(--red-glow);
-            margin-bottom: 15px;
-        }
-        .eventinfo-box h4 {
-            font-family: var(--font-h); font-size: 12px;
-            color: var(--red-bright); letter-spacing: 3px;
-            text-transform: uppercase; margin-bottom: 8px;
-        }
-        .eventinfo-box p {
-            font-size: 15px; color: var(--gray); line-height: 1.6;
-        }
-        .eventinfo-box .highlight {
-            color: var(--white); font-weight: 600;
-        }
+        
 
         /* ========== SCENE 7: SPEAKERS ========== */
         .speakers-scene { background: transparent; }
@@ -877,76 +843,81 @@
             <div class="scene-title" id="sched-title">Agenda del <span>seminario</span></div>
             <div class="schedule-container">
                 <div class="schedule-item" id="si1">
-                    <div class="sched-time">09:00</div>
+                    <div class="sched-time">10:00</div>
                     <div class="sched-content">
-                        <h4>Acreditación y Bienvenida</h4>
-                        <p>Recepción de participantes y palabras de apertura de la Directora de Carrera.</p>
+                        <h4>Recepción y Bienvenida</h4>
+                        <p>Recepción y bienvenida de asistentes.</p>
                         <span class="sched-tag">Inauguración</span>
                     </div>
                 </div>
                 <div class="schedule-item" id="si2">
-                    <div class="sched-time">09:30</div>
+                    <div class="sched-time">10:15</div>
                     <div class="sched-content">
-                        <h4>Keynote: El Futuro de la IA en Chile</h4>
-                        <p>Panorama de la inteligencia artificial y oportunidades para la región del Ñuble.</p>
-                        <span class="sched-tag">Keynote</span>
+                        <h4>Presentación del Seminario y Objetivos</h4>
+                        <p>Presentación del seminario y sus objetivos.</p>
+                        <span class="sched-tag">Inauguración</span>
                     </div>
                 </div>
                 <div class="schedule-item" id="si3">
                     <div class="sched-time">10:30</div>
                     <div class="sched-content">
-                        <h4>Proyecto Alpha: IoT Agrícola</h4>
-                        <p>Presentación del sistema de sensores para agricultura inteligente.</p>
-                        <span class="sched-tag">Proyecto</span>
+                        <h4>Realidad Virtual, Nuevas Tecnologías XR</h4>
+                        <p>Expositor: Ricardo Guerra</p>
+                        <span class="sched-tag">Charla</span>
                     </div>
                 </div>
                 <div class="schedule-item" id="si4">
-                    <div class="sched-time">11:30</div>
+                    <div class="sched-time">11:00</div>
                     <div class="sched-content">
-                        <h4>Coffee Break y Networking</h4>
-                        <p>Espacio para conexiones entre estudiantes, docentes y profesionales del sector.</p>
-                        <span class="sched-tag">Networking</span>
+                        <h4>Espacio de Preguntas</h4>
+                        <p>Preguntas tras la charla de Ricardo Guerra.</p>
+                        <span class="sched-tag">Preguntas</span>
                     </div>
                 </div>
                 <div class="schedule-item" id="si5">
-                    <div class="sched-time">12:00</div>
+                    <div class="sched-time">11:15</div>
                     <div class="sched-content">
-                        <h4>Proyecto Beta: Chatbot de Salud</h4>
-                        <p>Demo en vivo del asistente virtual para triaje médico.</p>
-                        <span class="sched-tag">Live Demo</span>
+                        <h4>Reconocimiento</h4>
+                        <p>Reconocimiento a Ricardo Guerra.</p>
+                        <span class="sched-tag">Reconocimiento</span>
                     </div>
                 </div>
                 <div class="schedule-item" id="si6">
-                    <div class="sched-time">13:00</div>
+                    <div class="sched-time">11:20</div>
                     <div class="sched-content">
-                        <h4>Proyecto Gamma: Blockchain Educativo</h4>
-                        <p>Certificación académica descentralizada al servicio de la educación.</p>
-                        <span class="sched-tag">Proyecto</span>
+                        <h4>Desarrollo Dirigido por Modelos en la Robótica Educativa</h4>
+                        <p>Expositor: Braulio Quiero</p>
+                        <span class="sched-tag">Charla</span>
+                    </div>
+                </div>
+                <div class="schedule-item" id="si7">
+                    <div class="sched-time">11:50</div>
+                    <div class="sched-content">
+                        <h4>Espacio de Preguntas</h4>
+                        <p>Preguntas tras la charla de Braulio Quiero.</p>
+                        <span class="sched-tag">Preguntas</span>
+                    </div>
+                </div>
+                <div class="schedule-item" id="si8">
+                    <div class="sched-time">12:05</div>
+                    <div class="sched-content">
+                        <h4>Reconocimiento</h4>
+                        <p>Reconocimiento a Braulio Quiero.</p>
+                        <span class="sched-tag">Reconocimiento</span>
+                    </div>
+                </div>
+                <div class="schedule-item" id="si9">
+                    <div class="sched-time">12:10</div>
+                    <div class="sched-content">
+                        <h4>Cierre y Agradecimientos</h4>
+                        <p>Cierre del seminario y agradecimientos.</p>
+                        <span class="sched-tag">Cierre</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SCENE 6: EVENT INFO -->
-        <div class="scene eventinfo-scene" id="scene-eventinfo">
-            <div class="eventinfo-grid" id="einfo-grid">
-                <div class="eventinfo-box">
-                    <svg class="icon" width="1em" height="1em"><use href="#ic-calendar-alt"/></svg>
-                    <h4>Fecha</h4>
-                    <p><span class="highlight">04 de mayo de 2026</span><br>jueves</p>
-                </div>
-                <div class="eventinfo-box">
-                    <svg class="icon" width="1em" height="1em"><use href="#ic-clock"/></svg>
-                    <h4>Horario</h4>
-                    <p><span class="highlight">10:00 - 13:00 hrs.</span><br>La mañana completa</p>
-                </div>
-                <div class="eventinfo-box">
-                    <svg class="icon" width="1em" height="1em"><use href="#ic-map-marker-alt"/></svg>
-                    <h4>Lugar</h4>
-                    <p><span class="highlight">Salón Lázaro Cárdenas</span><br>Avda. O'Higgins esquina Vegas de Saldías</p>
-                </div>
-            </div>
-        </div>
+        
 
         <!-- SCENE 7: SPEAKERS -->
         <div class="scene speakers-scene" id="scene-speakers">
@@ -954,15 +925,15 @@
             <div class="speakers-grid">
                 <div class="speaker-card" id="sc1">
                     <div class="speaker-avatar"><svg class="icon" width="1em" height="1em"><use href="#ic-user-tie"/></svg></div>
-                    <div class="speaker-name">Ricardo Guerrera</div>
+                    <div class="speaker-name">Ricardo Guerra</div>
                     <div class="speaker-role">CTO de BITPLAY</div>
-                    <div class="speaker-desc">Realidad virtual, nuevas tecnologías XR</div>
+                    <div class="speaker-desc">Realidad Virtual, Nuevas Tecnologías XR</div>
                 </div>
                 <div class="speaker-card" id="sc2">
                     <div class="speaker-avatar"><svg class="icon" width="1em" height="1em"><use href="#ic-user-tie"/></svg></div>
                     <div class="speaker-name">Braulio Quiero</div>
                     <div class="speaker-role">Docente ingeniería civil informática UCSC</div>
-                    <div class="speaker-desc">Desarrollo dirigido por modelos en la robótica educativa</div>
+                    <div class="speaker-desc">Desarrollo Dirigido por Modelos en la Robótica Educativa</div>
                 </div>
             </div>
         </div>
@@ -1065,10 +1036,10 @@
         // VIDEO ENGINE
         const scenes = [
             'scene-boot', 'scene-ucsc', 'scene-seminar', 'scene-projects',
-            'scene-organizer', 'scene-schedule', 'scene-eventinfo',
+            'scene-organizer', 'scene-schedule',
             'scene-speakers', 'scene-end'
         ];
-        const durations = [8000, 7000, 7000, 9000, 9000, 12000, 7000, 7000, 12000];
+        const durations = [8000, 7000, 7000, 9000, 9000, 12000, 7000, 12000];
         const totalDuration = durations.reduce((a, b) => a + b, 0);
 
         let currentScene = -1;
@@ -1103,9 +1074,8 @@
                 case 3: projAnim(); break;
                 case 4: orgAnim(); break;
                 case 5: schedAnim(); break;
-                case 6: einfoAnim(); break;
-                case 7: spkAnim(); break;
-                case 8: endAnim(); break;
+                case 6: spkAnim(); break;
+                case 7: endAnim(); break;
             }
         }
 
@@ -1183,15 +1153,8 @@
         // ---- SCHEDULE ----
         function schedAnim() {
             setTimeout(() => document.getElementById('sched-title').classList.add('reveal'), 200);
-            ['si1','si2','si3','si4','si5','si6'].forEach((id, i) => {
+            ['si1','si2','si3','si4','si5','si6','si7','si8','si9'].forEach((id, i) => {
                 setTimeout(() => document.getElementById(id).classList.add('animate'), 500 + i * 250);
-            });
-        }
-
-        // ---- EVENT INFO ----
-        function einfoAnim() {
-            document.querySelectorAll('.eventinfo-box').forEach((b, i) => {
-                setTimeout(() => b.classList.add('animate'), 300 + i * 250);
             });
         }
 
@@ -1277,11 +1240,7 @@
                 el.style.opacity = '0';
                 el.style.transform = 'translateX(-40px)';
             });
-            document.querySelectorAll('.eventinfo-box').forEach(el => {
-                el.classList.remove('animate');
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(40px) scale(0.9)';
-            });
+            
             document.querySelectorAll('.speaker-card').forEach(el => {
                 el.classList.remove('animate');
                 el.style.opacity = '0';
