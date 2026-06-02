@@ -369,6 +369,12 @@
             font-size: 100px; color: var(--white);
             opacity: 0.3; text-shadow: 0 0 30px var(--red-glow);
         }
+        .photo-frame img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            position: absolute; top: 0; left: 0;
+            z-index: 0;
+        }
         .photo-frame::before {
             content: ''; position: absolute; top: 0; left: 0;
             width: 100%; height: 100%;
@@ -511,58 +517,57 @@
         .speakers-scene .scene-title {
             font-family: var(--font-h); font-size: clamp(16px, 3vw, 26px);
             font-weight: 700; letter-spacing: 6px; text-transform: uppercase;
-            color: var(--white); margin-bottom: 40px; text-align: center; opacity: 0;
+            color: var(--white); margin-bottom: 25px; text-align: center; opacity: 0;
         }
         .speakers-scene .scene-title.reveal { animation: fadeSlideUp 0.8s ease-out forwards; }
         .speakers-scene .scene-title span { color: var(--red-bright); text-shadow: 0 0 10px var(--red-glow); }
 
-        .speakers-grid {
-            display: flex; gap: 25px; flex-wrap: wrap;
-            justify-content: center; max-width: 1000px; width: 92%;
+        .speakers-stack {
+            display: flex; flex-direction: column;
+            gap: 28px; max-width: 950px; width: 92%;
         }
-        .speaker-card {
-            width: 200px; text-align: center;
-            opacity: 0; transform: scale(0.8);
+        .speaker-block {
+            display: flex; gap: 28px; align-items: stretch;
+            opacity: 0; transform: translateY(40px);
             transition: all 0.3s;
         }
-        .speaker-card.animate { animation: speakerPop 0.6s ease-out forwards; }
-        @keyframes speakerPop {
-            0% { opacity: 0; transform: scale(0.8); }
-            70% { transform: scale(1.05); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-        .speaker-card:hover { transform: translateY(-8px) scale(1.03); }
+        .speaker-block.animate { animation: fadeSlideUp 0.8s ease-out forwards; }
+        .speaker-block:hover { transform: translateY(-3px); }
 
-        .speaker-avatar {
-            width: 120px; height: 120px; margin: 0 auto 15px;
-            border: 2px solid var(--red);
-            border-radius: 50%; overflow: hidden;
-            display: flex; align-items: center; justify-content: center;
-            background: rgba(204,0,0,0.05);
-            box-shadow: 0 0 20px var(--red-glow);
-            transition: all 0.3s;
+        .speaker-photo {
+            width: 150px; height: 190px; flex-shrink: 0;
+            position: relative;
         }
-        .speaker-card:hover .speaker-avatar {
-            box-shadow: 0 0 35px var(--red-glow);
+        .spk-label {
+            font-family: var(--font-h); font-size: 9px;
+            color: var(--red-bright); letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 0 0 8px var(--red-glow);
+            margin-bottom: 4px;
         }
-        .speaker-avatar .icon {
-            font-size: 48px; color: var(--white);
-            opacity: 0.4;
+        .spk-name {
+            font-family: var(--font-uni); font-size: clamp(16px, 2.2vw, 24px);
+            font-weight: 800; color: var(--white);
+            margin-bottom: 2px; line-height: 1.2;
         }
-        .speaker-name {
-            font-family: var(--font-uni); font-size: 15px;
-            font-weight: 700; color: var(--white); margin-bottom: 4px;
+        .spk-role {
+            font-family: var(--font-s); font-size: clamp(11px, 1.4vw, 14px);
+            color: var(--red-bright); letter-spacing: 1px;
+            text-shadow: 0 0 8px var(--red-glow);
+            margin-bottom: 10px;
         }
-        .speaker-role {
-            font-family: var(--font-s); font-size: 13px;
-            color: var(--white); letter-spacing: 2px;
-            text-transform: uppercase; opacity: 0.85;
+        .spk-items {
+            display: flex; flex-direction: column; gap: 3px;
         }
-        .speaker-desc {
-            font-size: 12px;
-            color: var(--muted);
-            margin-top: 8px;
-            line-height: 1.5;
+        .spk-item {
+            font-size: 11px; color: var(--gray);
+            line-height: 1.5; padding-left: 12px;
+            position: relative;
+        }
+        .spk-item::before {
+            content: '▸';
+            position: absolute; left: 0;
+            color: var(--red-bright); font-size: 10px;
         }
 
         /* ========== SCENE 8: CTA ========== */
@@ -669,9 +674,11 @@
 
         @media (max-width: 768px) {
             .organizer-layout { flex-direction: column; text-align: center; }
-            .organizer-photo { width: 200px; height: 250px; }
-            .org-stats { justify-content: center; }
+            .organizer-photo { width: 180px; height: 220px; }
             .org-contact-list { align-items: center; }
+            .speaker-block { flex-direction: column; text-align: center; align-items: center; }
+            .speaker-photo { width: 140px; height: 180px; }
+            .spk-items { align-items: center; }
             .cards-row { flex-direction: column; align-items: center; }
             .project-card { width: 90%; }
             .schedule-item { gap: 15px; }
@@ -791,7 +798,7 @@
             <div class="organizer-layout">
                 <div class="organizer-photo" id="org-photo">
                     <div class="photo-frame">
-                        <svg class="icon" width="1em" height="1em"><use href="#ic-user-graduate"/></svg>
+                        <img src="assets/profe_lucia.jpg" alt="Lucía Fuentes">
                         <span class="photo-frame-label">JEFA DE CARRERA</span>
                     </div>
                     <div class="photo-corner tl"></div>
@@ -801,40 +808,9 @@
                     <div class="photo-scan"></div>
                 </div>
                 <div class="organizer-info" id="org-info">
+                    <div class="org-label">Organizador</div>
                     <div class="org-name">Lucía Fuentes</div>
-                    <div class="org-title">Jefa de Carrera de Informática - UCSC Sede Chillán</div>
-                    <div class="org-desc">
-                        Doctora en Ciencias de la Computación con más de 15 años de experiencia en docencia e investigación. 
-                        Líder de proyectos de innovación tecnológica y promotora del ecosistema emprendedor digital en la región del Ñuble.
-                    </div>
-                    <div class="org-stats">
-                        <div class="org-stat">
-                            <div class="org-stat-num">15+</div>
-                            <div class="org-stat-label">Años de Docencia</div>
-                        </div>
-                        <div class="org-stat">
-                            <div class="org-stat-num">20+</div>
-                            <div class="org-stat-label">Publicaciones</div>
-                        </div>
-                        <div class="org-stat">
-                            <div class="org-stat-num">8</div>
-                            <div class="org-stat-label">Proyectos Fondef</div>
-                        </div>
-                    </div>
-                    <div class="org-contact-list">
-                        <div class="org-contact-item">
-                            <svg class="icon" width="1em" height="1em"><use href="#ic-envelope"/></svg>
-                            <span>lfuentes@ucsc.cl</span>
-                        </div>
-                        <div class="org-contact-item">
-                            <svg class="icon" width="1em" height="1em"><use href="#ic-phone"/></svg>
-                            <span>+56 41 234 5707</span>
-                        </div>
-                        <div class="org-contact-item">
-                            <svg class="icon" width="1em" height="1em"><use href="#ic-map-marker-alt"/></svg>
-                            <span>Arauco 449, Chillán</span>
-                        </div>
-                    </div>
+                    <div class="org-title">Jefa de Carrera de Informática — UCSC Sede Chillán</div>
                 </div>
             </div>
         </div>
@@ -923,18 +899,56 @@
         <!-- SCENE 7: SPEAKERS -->
         <div class="scene speakers-scene" id="scene-speakers">
             <div class="scene-title" id="spk-title">Expositores <span>destacados</span></div>
-            <div class="speakers-grid">
-                <div class="speaker-card" id="sc1">
-                    <div class="speaker-avatar"><svg class="icon" width="1em" height="1em"><use href="#ic-user-tie"/></svg></div>
-                    <div class="speaker-name">Ricardo Guerra</div>
-                    <div class="speaker-role">CTO de BITPLAY</div>
-                    <div class="speaker-desc">Realidad Virtual, Nuevas Tecnologías XR</div>
+            <div class="speakers-stack">
+                <div class="speaker-block" id="sb1">
+                    <div class="speaker-photo">
+                        <div class="photo-frame">
+                            <img src="assets/ricardo guerra.jpeg" alt="Ricardo Guerra">
+                            <span class="photo-frame-label">EXPOSITOR</span>
+                        </div>
+                        <div class="photo-corner tl"></div>
+                        <div class="photo-corner tr"></div>
+                        <div class="photo-corner bl"></div>
+                        <div class="photo-corner br"></div>
+                        <div class="photo-scan"></div>
+                    </div>
+                    <div class="speaker-info">
+                        <div class="spk-label">Relator</div>
+                        <div class="spk-name">Ricardo Guerra</div>
+                        <div class="spk-role">CTO Bitplay Realidad Virtual · CEO Tartik.com</div>
+                        <div class="spk-items">
+                            <div class="spk-item">CTO, Bitplay Realidad Virtual — Proyectos de RV y Simuladores de Inmersión Total</div>
+                            <div class="spk-item">CEO, Tartik.com — Transformación Digital, IA, Big Data, Cloud Services</div>
+                            <div class="spk-item">Gerente Técnico de Certificación, Dubai Certificaciones</div>
+                            <div class="spk-item">Docente, Inst. Internacional de Artes Culinarias — Evaluación de Proyectos, Gestión, E-Commerce</div>
+                            <div class="spk-item">Exp. en E-Commerce, Gestión de Producción y Logística</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="speaker-card" id="sc2">
-                    <div class="speaker-avatar"><svg class="icon" width="1em" height="1em"><use href="#ic-user-tie"/></svg></div>
-                    <div class="speaker-name">Braulio Quiero</div>
-                    <div class="speaker-role">Docente ingeniería civil informática UCSC</div>
-                    <div class="speaker-desc">Desarrollo Dirigido por Modelos en la Robótica Educativa</div>
+                <div class="speaker-block" id="sb2">
+                    <div class="speaker-photo">
+                        <div class="photo-frame">
+                            <img src="assets/Braulio Quiero Hernandez.jpg" alt="Braulio Quiero">
+                            <span class="photo-frame-label">EXPOSITOR</span>
+                        </div>
+                        <div class="photo-corner tl"></div>
+                        <div class="photo-corner tr"></div>
+                        <div class="photo-corner bl"></div>
+                        <div class="photo-corner br"></div>
+                        <div class="photo-scan"></div>
+                    </div>
+                    <div class="speaker-info">
+                        <div class="spk-label">Relator</div>
+                        <div class="spk-name">Braulio Quiero Hernández</div>
+                        <div class="spk-role">Académico, Depto. Informática — UCSC</div>
+                        <div class="spk-items">
+                            <div class="spk-item">Ing. Civil Informático y Lic. en Ciencias de la Ingeniería — UCSC</div>
+                            <div class="spk-item">M.Sc. Ciencias de la Computación — Universidad de Concepción</div>
+                            <div class="spk-item">Investigación: Desarrollo Dirigido por Modelos, IS y Robótica Educativa</div>
+                            <div class="spk-item">Proyecto FONDEF "Monitoreo Estructural de Puentes" · Proyecto DINNOVA</div>
+                            <div class="spk-item">Publicación en IEEE Latin America Transactions</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1040,7 +1054,7 @@
             'scene-organizer', 'scene-schedule',
             'scene-speakers', 'scene-end'
         ];
-        const durations = [8000, 7000, 7000, 9000, 9000, 12000, 7000, 12000];
+        const durations = [8000, 7000, 7000, 9000, 9000, 12000, 14000, 12000];
         const totalDuration = durations.reduce((a, b) => a + b, 0);
 
         let currentScene = -1;
@@ -1162,8 +1176,8 @@
         // ---- SPEAKERS ----
         function spkAnim() {
             setTimeout(() => document.getElementById('spk-title').classList.add('reveal'), 200);
-            ['sc1','sc2','sc3','sc4'].forEach((id, i) => {
-                setTimeout(() => document.getElementById(id).classList.add('animate'), 500 + i * 200);
+            ['sb1','sb2'].forEach((id, i) => {
+                setTimeout(() => document.getElementById(id).classList.add('animate'), 500 + i * 400);
             });
         }
 
@@ -1242,10 +1256,10 @@
                 el.style.transform = 'translateX(-40px)';
             });
             
-            document.querySelectorAll('.speaker-card').forEach(el => {
+            document.querySelectorAll('.speaker-block').forEach(el => {
                 el.classList.remove('animate');
                 el.style.opacity = '0';
-                el.style.transform = 'scale(0.8)';
+                el.style.transform = 'translateY(40px)';
             });
             document.getElementById('boot-text').innerHTML = '';
             document.getElementById('boot-progress-fill').style.width = '0%';
