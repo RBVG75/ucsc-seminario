@@ -1,4 +1,4 @@
 # Ignorar todo
-*
-!.gitignore
-!ucsc-seminar.html
+.agents/
+context.txt
+skills-lock.json
